@@ -45,7 +45,7 @@ def logger(func: callable):
     def wrapper(*args, **kwargs):
         run_dt = datetime.now(timezone.utc)
         result = func(*args, **kwargs)
-        print('{0}: was called at time {1}'.format(fn.__name__, run_dt))
+        print('{0}: was called at time {1}'.format(func.__name__, run_dt))
         return result
 
     return wrapper
@@ -76,9 +76,10 @@ def authenticatedOrNot(auth: bool):
                 authenticity = "Your are AUTHENTICATED !!"
             else:
                 authenticity = "You are NOT AUTHENTICATED !!"
-            
+
             return result, authenticity
 
+        return wrapper
         # if (auth):
         #     print("Your are AUTHENTICATED !!")
         #     return wrapper

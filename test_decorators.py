@@ -16,8 +16,8 @@ def test_odd_sec_1():
     time.sleep(1)
     ret2 = add(1, 2)
 
-    assert ('successfully executed' in ret1 and 'can not execute' in ret2) or \
-        ('successfully executed' in ret2 and 'can not execute' in ret1)
+    assert ('executed successfully' in ret1 and 'NOT executed' in ret2) or \
+        ('executed successfully' in ret2 and 'NOT executed' in ret1)
 
 
 ##########################################################
@@ -32,8 +32,8 @@ def test_odd_sec_2():
     time.sleep(1)
     ret2 = printme('hello')
 
-    assert ('successfully executed' in ret1 and 'can not execute' in ret2) or \
-        ('successfully executed' in ret2 and 'can not execute' in ret1)
+    assert ('executed successfully' in ret1 and 'NOT executed' in ret2) or \
+        ('executed successfully' in ret2 and 'NOT executed' in ret1)
 
 
 ##########################################################
@@ -45,13 +45,13 @@ def test_logged():
         print(*args)
 
     ret1 = printme('hello', 'there')
-    assert ('log:printme was executed at' in ret1)
+    assert (': was called at time' in ret1)
 
     ret1 = printme()
-    assert ('log:printme was executed at' in ret1)
+    assert (': was called at time' in ret1)
 
     ret1 = printme()
-    assert not('log:inner was executed at' in ret1)
+    assert not('wrapper: was called at time' in ret1)
 
  ##########################################################
 
