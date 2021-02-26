@@ -1,0 +1,14 @@
+{
+    "tests": [
+      {
+        "name": "decorators_test",
+        "setup": "sudo -H pip3 install pytest",
+        "run": "pytest -vv",
+        "input": "",
+        "output": "",
+        "comparison": "included",
+        "timeout": 20,
+        "points": 600
+      }
+    ]
+  }
